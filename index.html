@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link href="main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <script src="logic.js"></script>
+    <script src="materialize.min.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="hide-on-small">
+        <nav class="black white-text">
+            <div class="nav-wrapper">
+                <ul class="left">
+                    <li>
+                        <a class="material-icons medium">attach_moneyattach_money</a>:
+                    </li>
+                    <li>
+                        <a id="score">0</a>
+                    </li>
+                    <li>
+                        <a class="material-icons medium">favorite_border</a>:
+                    </li>
+                    <li>
+                        <a id="lives"></a>
+                    </li>
+                </ul>
+                <ul class="center brand-logo">
+                    <li>
+                        Asteriod Hunt
+                    </li>
+                    <li id="name">
+                        &nbsp;&nbsp;
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;
+                    </li>
+                    <li id="strGameBtn">
+                        <a onclick="startGame()">Start Game</a>
+                    </li>
+                </ul>
+                <ul class="right">
+                    <li id="set">
+                        <a href="#settings" class="modal-trigger"><i class="material-icons">settings</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col m12 l12">
+                <div id="playarea">
+                    <div id="redline"></div>
+                    <img src="ship.png" id="character">
+                    <div id="asteriods">
+                    </div>
+                    <div id="bullets">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOverScreen" class="modal">
+        </div>
+        <div class="modal" id="settings">
+            <div class="modal-content container">
+                <center>
+                    <h3>Settings</h3>
+                </center>
+                Number Of Bullets:<input type="number" onkeyup="setBulletCount(this.value)" value="6"> Number Of Asteriods:<input type="number" onkeyup="setAsteriodCount(this.value)" value="4"> Number Of Lives:<input type="number" onkeyup="setLifeCount(this.value)" value="3"> Speed Of Bullets:<input type="number" onkeyup="setBulletSpeed(this.value)" value="10"> Speed Of Asteriods:<input type="number" onkeyup="setAsteriodSpeed(this.value)" value="4">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
